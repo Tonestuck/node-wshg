@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>Спаси Кота - Приют и Защита</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,12 +14,13 @@
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
+            /* 配色改为温暖的橘色系，更适合猫咪主题 */
+            --primary: #e65100;   /* 深橘色 */
+            --secondary: #ff9800; /* 亮橘色 */
+            --accent: #ffb74d;    /* 浅橘色 */
+            --light: #fff3e0;     /* 极浅橘/米色背景 */
+            --dark: #3e2723;      /* 深褐色/暖黑色 */
+            --text: #5d4037;      /* 褐色文字 */
             --white: #ffffff;
         }
 
@@ -82,7 +83,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent);
+            color: var(--dark); /* 悬停颜色变为深色 */
         }
 
         nav ul li a::after {
@@ -92,7 +93,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
+            background-color: var(--dark);
             transition: width 0.3s ease;
         }
 
@@ -101,7 +102,8 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            /* 替换为猫咪背景图 */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2043&q=80');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -125,26 +127,42 @@
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--primary);
             color: var(--white);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
+            border: 2px solid var(--primary);
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn:hover {
-            background-color: var(--primary);
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 特殊处理 CTA 区域的按钮 */
+        .cta .btn {
+            background-color: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+        
+        .cta .btn:hover {
+            background-color: var(--dark);
+            color: var(--white);
+            border-color: var(--dark);
         }
 
         section {
@@ -250,6 +268,7 @@
 
         .stat-item p {
             color: var(--text);
+            font-weight: 600;
         }
 
         .initiatives {
@@ -304,6 +323,18 @@
             margin-bottom: 1.5rem;
         }
 
+        /* 按钮在卡片中的样式调整 */
+        .initiative-content .btn {
+            background-color: var(--primary);
+            border: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1.5rem;
+        }
+        .initiative-content .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+
         .cta {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
@@ -322,16 +353,6 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
         }
 
         footer {
@@ -377,7 +398,7 @@
         }
 
         .footer-links li a {
-            color: var(--light);
+            color: #bdbdbd;
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -499,19 +520,19 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <i class="fas fa-paw"></i>
+                <span>Кошкин Дом</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#initiatives">Программы</a></li>
+                    <li><a href="#get-involved">Помочь</a></li>
+                    <li><a href="#contact">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -520,9 +541,9 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>Каждая жизнь бесценна</h1>
+            <p>Подарите тепло тем, у кого нет дома. Присоединяйтесь к нашей миссии по спасению и защите кошек.</p>
+            <a href="#get-involved" class="btn">Найти друга</a>
         </div>
     </section>
 
@@ -530,41 +551,42 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>О нашем приюте</h2>
+                <p>Мы - сообщество волонтеров, которое верит, что у каждого кота должен быть свой человек.</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+                    <!-- 更换为志愿者和猫咪的图片 -->
+                    <img src="https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Волонтер с кошкой">
                 </div>
                 <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <h3>Наша Миссия</h3>
+                    <p>«Кошкин Дом» занимается спасением, лечением и поиском новых семей для бездомных кошек. Мы работаем, чтобы сократить количество животных на улицах гуманными методами.</p>
+                    <p>Основанный в 2015 году, наш приют вырос из маленькой передержки в полноценный центр реабилитации. Мы не просто кормим животных, мы лечим их души и учим снова доверять людям.</p>
+                    <p>Наш подход включает в себя стерилизацию, вакцинацию и строгий отбор будущих владельцев, чтобы гарантировать счастливое будущее для наших подопечных.</p>
+                    <a href="#" class="btn" style="background-color:var(--dark); border-color:var(--dark);">Подробнее</a>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
+                    <i class="fas fa-cat"></i>
+                    <h3 class="counter" data-target="1250">0</h3>
+                    <p>Спасено кошек</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
+                    <i class="fas fa-home"></i>
+                    <h3 class="counter" data-target="980">0</h3>
+                    <p>Нашли дом</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3 class="counter" data-target="150">0</h3>
+                    <p>Волонтеров</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                    <i class="fas fa-bowl-food"></i>
+                    <h3 class="counter" data-target="5000">0</h3>
+                    <p>Кг корма в год</p>
                 </div>
             </div>
         </div>
@@ -574,38 +596,41 @@
     <section class="initiatives" id="initiatives">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2>Наши Программы</h2>
+                <p>Узнайте, как мы помогаем животным и как вы можете принять в этом участие.</p>
             </div>
             <div class="initiatives-grid">
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+                        <!-- 领养相关图片 -->
+                        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2030&q=80" alt="Поиск дома">
                     </div>
                     <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>Усыновление</h3>
+                        <p>Поиск любящих семей для наших подопечных. Мы подбираем идеальную пару: человека для кота и кота для человека.</p>
+                        <a href="#" class="btn">Выбрать кота</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                        <!-- 医疗相关图片 -->
+                        <img src="https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80" alt="Ветеринария">
                     </div>
                     <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>Лечение и Уход</h3>
+                        <p>Оказание экстренной медицинской помощи пострадавшим животным, вакцинация и регулярные осмотры.</p>
+                        <a href="#" class="btn">Помочь лекарствами</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+                        <!-- 小猫图片 -->
+                        <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Стерилизация">
                     </div>
                     <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>Стерилизация</h3>
+                        <p>Программа ОСВВ (Отлов-Стерилизация-Вакцинация-Возврат) для гуманного контроля численности бездомных животных.</p>
+                        <a href="#" class="btn">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -615,9 +640,9 @@
     <!-- CTA Section -->
     <section class="cta" id="get-involved">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <h2>Ваша помощь меняет мир</h2>
+            <p>Не обязательно быть супергероем, чтобы спасти жизнь. Можно стать волонтером, взять кота из приюта или просто поддержать нас.</p>
+            <a href="#" class="btn">Пожертвовать</a>
         </div>
     </section>
 
@@ -626,44 +651,44 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3>Кошкин Дом</h3>
+                    <p>Мы стремимся создать мир, в котором у каждой кошки будет теплая подстилка и полная миска еды.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Навигация</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О приюте</a></li>
+                        <li><a href="#initiatives">Наши коты</a></li>
+                        <li><a href="#get-involved">Как помочь</a></li>
+                        <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
+                    <h3>Проекты</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                        <li><a href="#">Взять домой</a></li>
+                        <li><a href="#">Стать опекуном</a></li>
+                        <li><a href="#">Помощь кормом</a></li>
+                        <li><a href="#">Волонтерство</a></li>
+                        <li><a href="#">Истории успеха</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Ленина 42, Москва</p>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> help@koshkindom.ru</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2025 Кошкин Дом. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -687,7 +712,7 @@
                 
                 if(count < target) {
                     counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
+                    setTimeout(animateCounters, 20);
                 } else {
                     counter.innerText = target;
                 }
@@ -695,7 +720,23 @@
         }
 
         // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
+        // Using Intersection Observer to start animation only when visible
+        let observed = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !observed) {
+                    animateCounters();
+                    observed = true;
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats');
+        if(statsSection) {
+            observer.observe(statsSection);
+        } else {
+            window.addEventListener('load', animateCounters);
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -718,5 +759,4 @@
         });
     </script>
 </body>
-
 </html>
